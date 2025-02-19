@@ -1,48 +1,40 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "kumarajay@gmail.com"; // Replace with your email
-    $name = htmlspecialchars($_POST["name"]);
-    $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
-    $subject = htmlspecialchars($_POST["subject"]);
-    $message = htmlspecialchars($_POST["message"]);
+  /**
+  * Requires the "PHP Email Form" library
+  * The "PHP Email Form" library is available only in the pro version of the template
+  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
+  * For more info and help: https://bootstrapmade.com/php-email-form/
+  */
 
-    // Error Handling
-    $errors = [];
+  // Replace contact@example.com with your real receiving email address
+  $receiving_email_address = 'kumarajay@gmail.com';
 
-    if (empty($name)) {
-        $errors[] = "Name is required.";
-    }
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "Invalid email format.";
-    }
-    if (empty($subject)) {
-        $errors[] = "Subject is required.";
-    }
-    if (empty($message)) {
-        $errors[] = "Message cannot be empty.";
-    }
+  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
+    include( $php_email_form );
+  } else {
+    die( 'Unable to load the "PHP Email Form" Library!');
+  }
 
-    // Show errors if any
-    if (!empty($errors)) {
-        echo "<span class='text-danger'>" . implode("<br>", $errors) . "</span>";
-        exit;
-    }
+  $contact = new PHP_Email_Form;
+  $contact->ajax = true;
+  
+  $contact->to = $receiving_email_address;
+  $contact->from_name = $_POST['name'];
+  $contact->from_email = $_POST['email'];
+  $contact->subject = $_POST['subject'];
 
-    // Email Headers
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
+  $contact->smtp = array(
+    'host' => 'smtp.gmail.com', // SMTP server (Gmail, Zoho, SendGrid, etc.)
+    'username' => 'kumarajay1711@gmail.com', // Your email
+    'password' => 'dpdcjfbvttpxyhpy', // Use an App Password (not Gmail password)
+    'port' => '587', // Port: 587 (TLS) or 465 (SSL)
+    'encryption' => 'tls' // Use 'tls' for port 587 or 'ssl' for port 465
+);
 
-    $body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
+  $contact->add_message( $_POST['name'], 'From');
+  $contact->add_message( $_POST['email'], 'Email');
+  $contact->add_message( $_POST['message'], 'Message', 10);
 
-    // Try sending email and print error if it fails
-    if (mail($to, $subject, $body, $headers)) {
-        echo "<span class='text-success'>Message sent successfully!</span>";
-    } else {
-        error_log("Mail sending failed to $to.");
-        echo "<span class='text-danger'>Failed to send message. Server error.</span>";
-    }
-} else {
-    echo "<span class='text-danger'>Invalid request.</span>";
-}
+  echo $contact->send();
 ?>
