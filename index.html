@@ -365,6 +365,10 @@
 
     </section><!-- /Resume Section -->
 
+
+
+
+
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio section">
 
@@ -483,7 +487,74 @@
 
       </div>
 
-    </section><!-- /Portfolio Section -->
+    </section>
+    <!-- /Portfolio Section -->
+
+<!-- Portfolio Section -->
+<section id="portfolio" class="portfolio section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Portfolio</h2>
+    <p>Here are a few examples of my work. I’ve had the opportunity to work on a variety of projects, ranging from internal business solutions to innovative customer-facing platforms. Each project showcases my skills in Laravel, React, and full-stack development.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+
+    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+      <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+        <li data-filter="*" class="filter-active">All</li>
+        <li data-filter=".filter-app">Web Application</li>
+        <li data-filter=".filter-product">E-Commerce</li>
+        <li data-filter=".filter-branding">Branding</li>
+      </ul><!-- End Portfolio Filters -->
+
+      <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+        <!-- Office Project 1: Real-time E-Commerce Platform -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+          <img src="assets/img/portfolio/project1.jpg" class="img-fluid" alt="E-Commerce Platform">
+          <div class="portfolio-info">
+            <h4>E-Commerce Platform</h4>
+            <p>Developed a dynamic, real-time e-commerce platform for managing products and orders.</p>
+            <a href="assets/img/portfolio/project1.jpg" title="E-Commerce Platform" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div><!-- End Portfolio Item -->
+
+        <!-- Office Project 2: Internal Business Analytics Dashboard -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+          <img src="assets/img/portfolio/project2.jpg" class="img-fluid" alt="Business Dashboard">
+          <div class="portfolio-info">
+            <h4>Business Analytics Dashboard</h4>
+            <p>Created a business intelligence dashboard that helped track and visualize key business metrics.</p>
+            <a href="assets/img/portfolio/project2.jpg" title="Business Analytics Dashboard" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div><!-- End Portfolio Item -->
+
+        <!-- Office Project 3: Custom CRM System -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+          <img src="assets/img/portfolio/project3.jpg" class="img-fluid" alt="CRM System">
+          <div class="portfolio-info">
+            <h4>Custom CRM System</h4>
+            <p>Developed a custom CRM solution using Laravel and React for managing customer relationships.</p>
+            <a href="assets/img/portfolio/project3.jpg" title="CRM System" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div><!-- End Portfolio Item -->
+
+      </div><!-- End Portfolio Container -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Portfolio Section -->
+
+
+
 
     <!-- Services Section -->
     <section id="services" class="services section">
@@ -527,6 +598,21 @@
               <p>From creating RESTful APIs to integrating third-party services like PayPal, Firebase, or SMS gateways, I ensure smooth and secure communication across systems.</p>
             </div>
           </div><!-- End Service Item -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item item-indigo position-relative">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,532.3542879108572C369.38199826031484,532.3153073249985,429.10787420159085,491.63046689027357,474.5244479745417,439.17860296908856C522.8885846962883,383.3225815378663,569.1668002868075,314.3205725914397,550.7432151929288,242.7694973846089C532.6665558377875,172.5657663291529,456.2379748765914,142.6223662098291,390.3689995646985,112.34683881706744C326.66090330228417,83.06452184765237,258.84405631176094,53.51806209861945,193.32584062364296,78.48882559362697C121.61183558270385,105.82097193414197,62.805066853699245,167.19869350419734,48.57481801355237,242.6138429142374C34.843463184063346,315.3850353017275,76.69343916112496,383.4422959591041,125.22947124332185,439.3748458443577C170.7312796277747,491.8107796887764,230.57421082200815,532.3932930995766,300,532.3542879108572"></path>
+                </svg>
+                <i class="bi bi-calendar4-week icon"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>E-commerce Solutions</h3>
+              </a>
+              <p>Whether it’s an admin dashboard, order management system, or a custom checkout flow, I deliver complete e-commerce functionality with scalability in mind.</p>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="service-item item-teal position-relative">
@@ -559,21 +645,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item item-indigo position-relative">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,532.3542879108572C369.38199826031484,532.3153073249985,429.10787420159085,491.63046689027357,474.5244479745417,439.17860296908856C522.8885846962883,383.3225815378663,569.1668002868075,314.3205725914397,550.7432151929288,242.7694973846089C532.6665558377875,172.5657663291529,456.2379748765914,142.6223662098291,390.3689995646985,112.34683881706744C326.66090330228417,83.06452184765237,258.84405631176094,53.51806209861945,193.32584062364296,78.48882559362697C121.61183558270385,105.82097193414197,62.805066853699245,167.19869350419734,48.57481801355237,242.6138429142374C34.843463184063346,315.3850353017275,76.69343916112496,383.4422959591041,125.22947124332185,439.3748458443577C170.7312796277747,491.8107796887764,230.57421082200815,532.3932930995766,300,532.3542879108572"></path>
-                </svg>
-                <i class="bi bi-calendar4-week icon"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>-commerce Solutions</h3>
-              </a>
-              <p>Whether it’s an admin dashboard, order management system, or a custom checkout flow, I deliver complete e-commerce functionality with scalability in mind.</p>
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
+        
 
 
         </div>
